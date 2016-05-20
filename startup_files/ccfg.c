@@ -64,8 +64,8 @@
 // Force VDDR high setting (Higher output power but also higher power consumption)
 //#####################################
 
-#define CCFG_FORCE_VDDR_HH                              0x0        // Use default VDDR trim
-// #define CCFG_FORCE_VDDR_HH                           0x1        // Force VDDR voltage to the factory HH setting (FCFG1..VDDR_TRIM_HH)
+//#define CCFG_FORCE_VDDR_HH                              0x0        // Use default VDDR trim
+#define CCFG_FORCE_VDDR_HH                           0x1        // Force VDDR voltage to the factory HH setting (FCFG1..VDDR_TRIM_HH)
 
 //*****************************************************************************
 //
