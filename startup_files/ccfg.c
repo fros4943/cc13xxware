@@ -64,10 +64,8 @@
 // Force VDDR high setting (Higher output power but also higher power consumption)
 //#####################################
 
-#ifndef CCFG_FORCE_VDDR_HH
-#define CCFG_FORCE_VDDR_HH                              0x0        // Use default VDDR trim
-// #define CCFG_FORCE_VDDR_HH                           0x1        // Force VDDR voltage to the factory HH setting (FCFG1..VDDR_TRIM_HH)
-#endif
+//#define CCFG_FORCE_VDDR_HH                              0x0        // Use default VDDR trim
+#define CCFG_FORCE_VDDR_HH                           0x1        // Force VDDR voltage to the factory HH setting (FCFG1..VDDR_TRIM_HH)
 
 //*****************************************************************************
 //
@@ -200,31 +198,25 @@
 //#####################################
 
 #ifndef SET_CCFG_BL_CONFIG_BOOTLOADER_ENABLE
-#define SET_CCFG_BL_CONFIG_BOOTLOADER_ENABLE            0x00       // Disable ROM boot loader
-// #define SET_CCFG_BL_CONFIG_BOOTLOADER_ENABLE         0xC5       // Enable ROM boot loader
+// #define SET_CCFG_BL_CONFIG_BOOTLOADER_ENABLE         0x00       // Disable ROM boot loader
+#define SET_CCFG_BL_CONFIG_BOOTLOADER_ENABLE            0xC5       // Enable ROM boot loader
 #endif
 
-#ifndef SET_CCFG_BL_CONFIG_BL_LEVEL
 // #define SET_CCFG_BL_CONFIG_BL_LEVEL                  0x0        // Active low to open boot loader backdoor
 #define SET_CCFG_BL_CONFIG_BL_LEVEL                     0x1        // Active high to open boot loader backdoor
-#endif
 
-#ifndef SET_CCFG_BL_CONFIG_BL_PIN_NUMBER
 #define SET_CCFG_BL_CONFIG_BL_PIN_NUMBER                0xFF       // DIO number for boot loader backdoor
-#endif
 
-#ifndef SET_CCFG_BL_CONFIG_BL_ENABLE
 // #define SET_CCFG_BL_CONFIG_BL_ENABLE                 0xC5       // Enabled boot loader backdoor
 #define SET_CCFG_BL_CONFIG_BL_ENABLE                    0xFF       // Disabled boot loader backdoor
-#endif
 
 //#####################################
 // Debug access settings
 //#####################################
 
 #ifndef SET_CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE
-#define SET_CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE           0x00       // Disable unlocking of TI FA option
-// #define SET_CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE        0xC5       // Enable unlocking of TI FA option with the unlock code
+// #define SET_CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE        0x00       // Disable unlocking of TI FA option.
+#define SET_CCFG_CCFG_TI_OPTIONS_TI_FA_ENABLE           0xC5       // Enable unlocking of TI FA option with the unlock code
 #endif
 
 #ifndef SET_CCFG_CCFG_TAP_DAP_0_CPU_DAP_ENABLE
@@ -233,8 +225,8 @@
 #endif
 
 #ifndef SET_CCFG_CCFG_TAP_DAP_0_PRCM_TAP_ENABLE
-#define SET_CCFG_CCFG_TAP_DAP_0_PRCM_TAP_ENABLE         0x00       // Access disabled
-// #define SET_CCFG_CCFG_TAP_DAP_0_PRCM_TAP_ENABLE      0xC5       // Access enabled if also enabled in FCFG
+// #define SET_CCFG_CCFG_TAP_DAP_0_PRCM_TAP_ENABLE      0x00       // Access disabled
+#define SET_CCFG_CCFG_TAP_DAP_0_PRCM_TAP_ENABLE         0xC5       // Access enabled if also enabled in FCFG
 #endif
 
 #ifndef SET_CCFG_CCFG_TAP_DAP_0_TEST_TAP_ENABLE
@@ -243,18 +235,18 @@
 #endif
 
 #ifndef SET_CCFG_CCFG_TAP_DAP_1_PBIST2_TAP_ENABLE
-#define SET_CCFG_CCFG_TAP_DAP_1_PBIST2_TAP_ENABLE       0x00       // Access disabled
-// #define SET_CCFG_CCFG_TAP_DAP_1_PBIST2_TAP_ENABLE    0xC5       // Access enabled if also enabled in FCFG
+// #define SET_CCFG_CCFG_TAP_DAP_1_PBIST2_TAP_ENABLE    0x00       // Access disabled
+#define SET_CCFG_CCFG_TAP_DAP_1_PBIST2_TAP_ENABLE       0xC5       // Access enabled if also enabled in FCFG
 #endif
 
 #ifndef SET_CCFG_CCFG_TAP_DAP_1_PBIST1_TAP_ENABLE
-#define SET_CCFG_CCFG_TAP_DAP_1_PBIST1_TAP_ENABLE       0x00       // Access disabled
-// #define SET_CCFG_CCFG_TAP_DAP_1_PBIST1_TAP_ENABLE    0xC5       // Access enabled if also enabled in FCFG
+// #define SET_CCFG_CCFG_TAP_DAP_1_PBIST1_TAP_ENABLE    0x00       // Access disabled
+#define SET_CCFG_CCFG_TAP_DAP_1_PBIST1_TAP_ENABLE       0xC5       // Access enabled if also enabled in FCFG
 #endif
 
 #ifndef SET_CCFG_CCFG_TAP_DAP_1_WUC_TAP_ENABLE
-#define SET_CCFG_CCFG_TAP_DAP_1_WUC_TAP_ENABLE          0x00       // Access disabled
-// #define SET_CCFG_CCFG_TAP_DAP_1_WUC_TAP_ENABLE       0xC5       // Access enabled if also enabled in FCFG
+// #define SET_CCFG_CCFG_TAP_DAP_1_WUC_TAP_ENABLE       0x00       // Access disabled
+#define SET_CCFG_CCFG_TAP_DAP_1_WUC_TAP_ENABLE          0xC5       // Access enabled if also enabled in FCFG
 #endif
 
 //#####################################
@@ -342,6 +334,7 @@
 //
 //*****************************************************************************
 #define SET_CCFG_SIZE_AND_DIS_FLAGS_SIZE_OF_CCFG        0x0058
+// #define SET_CCFG_SIZE_AND_DIS_FLAGS_DISABLE_FLAGS       0x3FFF
 #define SET_CCFG_SIZE_AND_DIS_FLAGS_DISABLE_FLAGS       (CCFG_SIZE_AND_DIS_FLAGS_DISABLE_FLAGS_M >> CCFG_SIZE_AND_DIS_FLAGS_DISABLE_FLAGS_S)
 
 #if ( CCFG_FORCE_VDDR_HH )
@@ -469,8 +462,42 @@
 #define DEFAULT_CCFG_CCFG_PROT_63_32     SET_CCFG_CCFG_PROT_63_32 
 #define DEFAULT_CCFG_CCFG_PROT_95_64     SET_CCFG_CCFG_PROT_95_64 
 #define DEFAULT_CCFG_CCFG_PROT_127_96    SET_CCFG_CCFG_PROT_127_96
-
-//*****************************************************************************
+/*---------------------------------------------------------------------------*/
+/* By default lockdown the chip for production */
+#ifndef LOCKDOWN_CHIP
+#define LOCKDOWN_CHIP    1
+#endif /* LOCKDOWN_CHIP */
+/*---------------------------------------------------------------------------*/
+/*
+ * Following FUG section 9.1, we disable all debug interfaces etc and ensure we
+ * boot directly into the flash firmware without allowing the backdoor to
+ * intercept startup procedure. See FUG section 9 and especially 9.1.
+ *
+ * The secured config
+ *    disables all JTAG interfaces
+ *    disables TI Failure analysis
+ *    disables serial bootloader backdoor
+ *    declares the firmware as valid -> bootloader boots directly from firmware
+ * We still allow the firmware itself to erase/write to flash to allow FOTA to
+ * work - no flash pages are locked.
+ *
+ * The changes are identical in cc26xx and cc13xx so any patches may need to be
+ * mirrored across.
+ */
+#if LOCKDOWN_CHIP
+#define CCFG_BL_CONFIG                0x00ffff00
+#define CCFG_CCFG_TI_OPTIONS          0xffffff00
+#define CCFG_CCFG_TAP_DAP_0           0xff000000
+#define CCFG_CCFG_TAP_DAP_1           0xff000000
+#define CCFG_IMAGE_VALID_CONF         0x00000000
+#else /* LOCKDOWN_CHIP */
+#define CCFG_BL_CONFIG                DEFAULT_CCFG_BL_CONFIG
+#define CCFG_CCFG_TI_OPTIONS          DEFAULT_CCFG_CCFG_TI_OPTIONS
+#define CCFG_CCFG_TAP_DAP_0           DEFAULT_CCFG_CCFG_TAP_DAP_0
+#define CCFG_CCFG_TAP_DAP_1           DEFAULT_CCFG_CCFG_TAP_DAP_1
+#define CCFG_IMAGE_VALID_CONF         DEFAULT_CCFG_IMAGE_VALID_CONF
+#endif /* LOCKDOWN_CHIP */
+/*---------------------------------------------------------------------------*/
 //
 // Customer Configuration Area in Lock Page
 //
@@ -497,14 +524,15 @@ const ccfg_t __ccfg __attribute__((section(".ccfg"))) __attribute__((used)) =
     DEFAULT_CCFG_IEEE_MAC_1         , // 0x50003FCC
     DEFAULT_CCFG_IEEE_BLE_0         , // 0x50003FD0
     DEFAULT_CCFG_IEEE_BLE_1         , // 0x50003FD4
-    DEFAULT_CCFG_BL_CONFIG          , // 0x50003FD8
+    CCFG_BL_CONFIG          , // 0x50003FD8
     DEFAULT_CCFG_ERASE_CONF         , // 0x50003FDC
-    DEFAULT_CCFG_CCFG_TI_OPTIONS    , // 0x50003FE0
-    DEFAULT_CCFG_CCFG_TAP_DAP_0     , // 0x50003FE4
-    DEFAULT_CCFG_CCFG_TAP_DAP_1     , // 0x50003FE8
-    DEFAULT_CCFG_IMAGE_VALID_CONF   , // 0x50003FEC
+    CCFG_CCFG_TI_OPTIONS    , // 0x50003FE0
+    CCFG_CCFG_TAP_DAP_0     , // 0x50003FE4
+    CCFG_CCFG_TAP_DAP_1     , // 0x50003FE8
+    CCFG_IMAGE_VALID_CONF   , // 0x50003FEC
     DEFAULT_CCFG_CCFG_PROT_31_0     , // 0x50003FF0
     DEFAULT_CCFG_CCFG_PROT_63_32    , // 0x50003FF4
     DEFAULT_CCFG_CCFG_PROT_95_64    , // 0x50003FF8
     DEFAULT_CCFG_CCFG_PROT_127_96   , // 0x50003FFC
 };
+/*---------------------------------------------------------------------------*/
